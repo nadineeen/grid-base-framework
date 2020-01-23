@@ -1,7 +1,8 @@
 // GRID
-$screenSizes: s 600px, m 768px, l 1024px;
+$screenSelectors: xs, s, m, l, xl;
+$screenSizes: 375px, 667px, 768px, 1024px, 1200px;
 
-.container-fluid {
+.container {
   width: 100%;
 }
 
@@ -39,8 +40,8 @@ $screenSizes: s 600px, m 768px, l 1024px;
 /* Columns at all screen sizes*/
 @include columns-layout(col, 12);
 
-/* Responsive selectors */
-@each $sel, $size in $screenSizes {
+/* Responsive selectors for column */
+@each $sel, $size in zip($screenSelectors, $screenSizes) {
   [class*='col-#{$sel}'],
   [class*='container-#{$sel}'] {
     width: 100%;
@@ -50,10 +51,18 @@ $screenSizes: s 600px, m 768px, l 1024px;
   @media only screen and (min-width: #{$size}) {
     // Changes to columns at certain breakpoints
     @include columns-layout(col-#{$sel}, 12);
+  }
+}
 
-    // TODO:Changes container width at certain breakpoints
-    // .container-#{$sel} {
-    //   max-width: $size;
-    // }
+/* Responsive selectors for container */
+@for $i from 1 through length($screenSizes) {
+  // for each size
+  @media only screen and (min-width: nth($screenSizes, $i)) {
+    // make changes to container for all selectors that are equal or smaller than this screen width
+    @for $j from 1 through $i {
+      .container-#{nth($screenSelectors, $j)} {
+        width: nth($screenSizes, $i) * 0.98;
+      }
+    }
   }
 }
