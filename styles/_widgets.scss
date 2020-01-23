@@ -1,1 +1,30 @@
 // WIDGETS
+
+/* Element that covers the screen fully */
+@mixin full-cover {
+  width: 0;
+  height: 0;
+  position: fixed;
+  &.active {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+$fullCoverTypes: top top, btm bottom, l left width, r right width;
+@each $sel, $pos, $prop in $fullCoverTypes {
+  .full-cover-#{$sel} {
+    @include full-cover;
+    @if $prop {
+      transition-property: $prop;
+      top: 0;
+      height: 100%;
+    } @else {
+      // assume transition property is height
+      transition-property: height;
+      width: 100%;
+    }
+    transition-duration: 0.8s;
+    #{$pos}: 0;
+  }
+}

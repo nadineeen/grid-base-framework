@@ -26,6 +26,19 @@ section {
   display: block;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav li {
+  list-style: none;
+}
+
 /* TYPE */
 body {
   color: #000000;
@@ -95,7 +108,7 @@ h6 {
   width: 100%;
 }
 
-.row {
+.row, .col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,6 +125,13 @@ h6 {
       -ms-flex-align: center;
           align-items: center;
   padding: 15px;
+}
+
+.col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .nowrap {
@@ -488,6 +508,77 @@ h6 {
   .container-xl {
     width: 1176px;
   }
+}
+
+/* Element that covers the screen fully */
+.full-cover-top {
+  width: 0;
+  height: 0;
+  position: fixed;
+  -webkit-transition-property: height;
+  transition-property: height;
+  width: 100%;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  top: 0;
+}
+
+.full-cover-top.active {
+  width: 100%;
+  height: 100%;
+}
+
+.full-cover-btm {
+  width: 0;
+  height: 0;
+  position: fixed;
+  -webkit-transition-property: height;
+  transition-property: height;
+  width: 100%;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  bottom: 0;
+}
+
+.full-cover-btm.active {
+  width: 100%;
+  height: 100%;
+}
+
+.full-cover-l {
+  width: 0;
+  height: 0;
+  position: fixed;
+  -webkit-transition-property: width;
+  transition-property: width;
+  top: 0;
+  height: 100%;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  left: 0;
+}
+
+.full-cover-l.active {
+  width: 100%;
+  height: 100%;
+}
+
+.full-cover-r {
+  width: 0;
+  height: 0;
+  position: fixed;
+  -webkit-transition-property: width;
+  transition-property: width;
+  top: 0;
+  height: 100%;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  right: 0;
+}
+
+.full-cover-r.active {
+  width: 100%;
+  height: 100%;
 }
 
 button {

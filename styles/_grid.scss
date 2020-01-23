@@ -12,8 +12,12 @@ $gutterSize: 15px;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-
   padding: $gutterSize;
+}
+
+.col {
+  @extend .row;
+  flex-direction: column;
 }
 
 .nowrap {
