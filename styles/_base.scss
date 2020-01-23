@@ -1,6 +1,23 @@
 // BASE
+@import './breakpoints';
 button {
   padding: 5px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Display Element at a certain breakpoint */
+@media screen and (min-width: #{nth($screenSizes, 1)}) {
+  @each $sel in $screenSelectors {
+    .display-from-#{$sel} {
+      display: none;
+    }
+  }
+}
+@each $sel, $size in zip($screenSelectors, $screenSizes) {
+  @media screen and (min-width: $size) {
+    .display-from-#{$sel} {
+      display: block;
+    }
+  }
 }

@@ -75,6 +75,22 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+.ta-cnr {
+  text-align: center;
+}
+
+.ta-l {
+  text-align: left;
+}
+
+.ta-r {
+  text-align: right;
+}
+
+.ta-j {
+  text-align: justify;
+}
+
 .container {
   width: 100%;
 }
@@ -478,5 +494,54 @@ button {
   padding: 5px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Display Element at a certain breakpoint */
+@media screen and (min-width: 375px) {
+  .display-from-xs {
+    display: none;
+  }
+  .display-from-s {
+    display: none;
+  }
+  .display-from-m {
+    display: none;
+  }
+  .display-from-l {
+    display: none;
+  }
+  .display-from-xl {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .display-from-xs {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .display-from-s {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .display-from-m {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .display-from-l {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .display-from-xl {
+    display: block;
+  }
 }
 /*# sourceMappingURL=framework.css.map */

@@ -33,3 +33,10 @@ $headingSizes: (
     font-family: $headingFont, sans-serif;
   }
 }
+
+$textAlignment: (ta-cnr center, ta-l left, ta-r right, ta-j justify);
+@each $sel, $value in $textAlignment {
+  .#{$sel} {
+    text-align: $value;
+  }
+}
