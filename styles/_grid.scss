@@ -1,0 +1,59 @@
+// GRID
+$screenSizes: s 600px, m 768px, l 1024px;
+
+.container-fluid {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+/* 
+  MEDIA QUERIES FOR GRID 
+*/
+@mixin columns-layout($base-sel, $n-cols) {
+  @for $i from 1 through $n-cols {
+    .#{$base-sel}-#{$i} {
+      width: 100% / (12 / $i);
+    }
+  }
+}
+
+/* Columns at all screen sizes*/
+@include columns-layout(col, 12);
+
+/* Responsive selectors */
+@each $sel, $size in $screenSizes {
+  [class*='col-#{$sel}'],
+  [class*='container-#{$sel}'] {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-width: #{$size}) {
+    // Changes to columns at certain breakpoints
+    @include columns-layout(col-#{$sel}, 12);
+
+    // TODO:Changes container width at certain breakpoints
+    // .container-#{$sel} {
+    //   max-width: $size;
+    // }
+  }
+}
