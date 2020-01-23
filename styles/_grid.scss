@@ -1,6 +1,7 @@
 // GRID
 $screenSelectors: xs, s, m, l, xl;
 $screenSizes: 375px, 667px, 768px, 1024px, 1200px;
+$gutterSize: 15px;
 
 .container {
   width: 100%;
@@ -12,6 +13,8 @@ $screenSizes: 375px, 667px, 768px, 1024px, 1200px;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+
+  padding: $gutterSize;
 }
 
 .nowrap {
@@ -46,6 +49,10 @@ $screenSizes: 375px, 667px, 768px, 1024px, 1200px;
   [class*='container-#{$sel}'] {
     width: 100%;
     margin: 0 auto;
+  }
+
+  [class*='container-#{$sel}'] {
+    padding: $gutterSize;
   }
 
   @media only screen and (min-width: #{$size}) {

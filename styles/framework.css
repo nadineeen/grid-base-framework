@@ -95,6 +95,7 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 15px;
 }
 
 .nowrap {
@@ -173,6 +174,10 @@ h6 {
   margin: 0 auto;
 }
 
+[class*='container-xs'] {
+  padding: 15px;
+}
+
 @media only screen and (min-width: 375px) {
   .col-xs-1 {
     width: 8.33333%;
@@ -216,6 +221,10 @@ h6 {
 [class*='container-s'] {
   width: 100%;
   margin: 0 auto;
+}
+
+[class*='container-s'] {
+  padding: 15px;
 }
 
 @media only screen and (min-width: 667px) {
@@ -263,6 +272,10 @@ h6 {
   margin: 0 auto;
 }
 
+[class*='container-m'] {
+  padding: 15px;
+}
+
 @media only screen and (min-width: 768px) {
   .col-m-1 {
     width: 8.33333%;
@@ -308,6 +321,10 @@ h6 {
   margin: 0 auto;
 }
 
+[class*='container-l'] {
+  padding: 15px;
+}
+
 @media only screen and (min-width: 1024px) {
   .col-l-1 {
     width: 8.33333%;
@@ -351,6 +368,10 @@ h6 {
 [class*='container-xl'] {
   width: 100%;
   margin: 0 auto;
+}
+
+[class*='container-xl'] {
+  padding: 15px;
 }
 
 @media only screen and (min-width: 1200px) {
