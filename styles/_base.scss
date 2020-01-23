@@ -23,3 +23,12 @@ button {
     }
   }
 }
+
+/* Display Element until a certain breakpoint */
+@each $sel, $size in zip($screenSelectors, $screenSizes) {
+  @media screen and (min-width: $size) {
+    .display-until-#{$sel} {
+      display: none;
+    }
+  }
+}

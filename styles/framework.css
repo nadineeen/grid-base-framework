@@ -635,4 +635,35 @@ button {
     display: block;
   }
 }
+
+/* Display Element until a certain breakpoint */
+@media screen and (min-width: 375px) {
+  .display-until-xs {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .display-until-s {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .display-until-m {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .display-until-l {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .display-until-xl {
+    display: none;
+  }
+}
 /*# sourceMappingURL=framework.css.map */
