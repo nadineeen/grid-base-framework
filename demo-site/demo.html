@@ -26,7 +26,7 @@
           </div>
         </a>
       </div>
-      <ul class="row f-display-from-m">
+      <ul class="row f-display-from-m nav-link">
         <li><a href="#">Curriculum</a></li>
         <li><a href="#">Community</a></li>
         <li><a href="#">About</a></li>
@@ -37,7 +37,21 @@
       </ul>
 
       <div class="display-until-m">
-        <button class="fas fa-bars"></button>
+        <span id="menu-btn" class="fas fa-bars" title="Menu"></span>
+      </div>
+      <div id="menu" class="full-cover-r ta-cnr">
+        <div class="col jc-c full-height">
+          <div id="hide-menu-btn" title="Close Menu">×</div>
+          <ul>
+            <li><a href="#">Curriculum</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">FAQ</a></li>
+            <div class="divider"></div>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     <header class="col-m-6 ta-cnr">
@@ -146,17 +160,28 @@
         ></a>
       </div>
       <div class="row f-display-from-s">
-        <ul class="col ai-fs">
+        <ul class="col ai-fs spacer-right nav-link">
           <li><a href="#">About</a></li>
           <li><a href="#">FAQ</a></li>
           <li><a href="#">Blog</a></li>
         </ul>
-        <ul class="col ai-fs">
+        <ul class="col ai-fs nav-link">
           <li><a href="#">Success Stories</a></li>
           <li><a href="#">Contribute</a></li>
           <li><a href="#">Terms of Use</a></li>
         </ul>
       </div>
     </footer>
+    <script>
+      const menuBtn = document.querySelector('#menu-btn');
+      const menu = document.querySelector('#menu');
+      menuBtn.addEventListener('click', () => {
+        menu.classList.add('active');
+      });
+      const hideMenu = document.querySelector('#hide-menu-btn');
+      hideMenu.addEventListener('click', () => {
+        menu.classList.remove('active');
+      });
+    </script>
   </body>
 </html>

@@ -101,6 +101,11 @@ footer {
   }
 }
 
+.nav-link {
+  font-weight: bold;
+  color: rgba(74, 74, 74, 0.7);
+}
+
 /* Header for main content */
 .course-badge {
   height: 60px;
@@ -127,6 +132,25 @@ footer {
 /* Section divider */
 .spacer {
   visibility: hidden;
+}
+
+.divider {
+  height: 0;
+  overflow: hidden;
+  background-color: #cc9543;
+  margin: 0.5rem auto;
+  border: 1px solid #cc9543;
+  width: 80vw;
+}
+
+.spacer-right {
+  margin-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .spacer-right {
+    margin-right: 40px;
+  }
 }
 
 /* Changes to framework */
@@ -168,4 +192,33 @@ footer {
 .button-secondary {
   color: #fff;
   background-color: #cc9543;
+}
+
+/* Full screen menu */
+#menu {
+  background-color: beige;
+  color: #cc9543;
+  font-size: 5vh;
+  line-height: 5vh;
+}
+
+#menu li {
+  padding: 0;
+  margin: 0;
+}
+
+#menu-btn,
+#hide-menu-btn {
+  color: #6abfc3;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+#hide-menu-btn {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.full-height {
+  height: 100vh;
 }
