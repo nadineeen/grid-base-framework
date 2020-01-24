@@ -81,3 +81,4 @@ There are some classes for flex properties for `.row` & `.col`:
 
 - flex-wrap: `.nowrap` (nowrap)
 - justify-content: `.jc-c` (center), `.jc-sb` (space-between)
+- align-items: `ai-fs` (flex-start), `ai-fe` (flex-end)
