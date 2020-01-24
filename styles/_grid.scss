@@ -35,16 +35,26 @@ $gutterSize: 15px;
 /* 
   MEDIA QUERIES FOR GRID 
 */
-@mixin columns-layout($base-sel, $n-cols) {
-  @for $i from 1 through $n-cols {
+@mixin columns-layout($base-sel) {
+  @for $i from 1 through 12 {
     .#{$base-sel}-#{$i} {
       width: 100% / (12 / $i);
     }
   }
 }
 
+@mixin rows-layout($base-sel) {
+  @for $i from 1 through 12 {
+    .#{$base-sel}-#{$i} {
+      @extend .row;
+      min-height: 100px * $i;
+    }
+  }
+}
+/* Fixed Row Heights at all screen sizes */
+@include rows-layout(row);
 /* Columns at all screen sizes*/
-@include columns-layout(col, 12);
+@include columns-layout(col);
 
 /* Responsive selectors for column */
 @each $sel, $size in zip($screenSelectors, $screenSizes) {
@@ -60,7 +70,7 @@ $gutterSize: 15px;
 
   @media only screen and (min-width: #{$size}) {
     // Changes to columns at certain breakpoints
-    @include columns-layout(col-#{$sel}, 12);
+    @include columns-layout(col-#{$sel});
   }
 }
 
