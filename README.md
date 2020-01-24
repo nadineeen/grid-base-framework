@@ -43,8 +43,18 @@ This framework comes with three different columns:
 
 There are two ways of specifying when an element should display
 
-- `.display-from-{breakpoint}`: element is displayed only from the specified breakpoint onwards
-- `.display-until-{breakpoint}`: element is display up until the breakpoint specified
+1. `.display-from-{breakpoint}`: element is displayed only from the specified breakpoint onwards
+
+   **Note that this defaults to `display: block` when breakpoint is reached**
+
+   To solve this, there are other versions of .display-from-{breakpoint} (more can be added in `_base.scss` file):
+
+   - flex: `.f-display-from-{breakpoint}`
+   - inline: `.i-display-from-{breakpoint}`
+   - inline-block: `.ib-display-from-{breakpoint}`
+   - grid: `.g-display-from-{breakpoint}`
+
+2. `.display-until-{breakpoint}`: element is display up until the breakpoint specified
 
 ## Elements that fully cover the screen
 

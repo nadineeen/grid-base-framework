@@ -10,17 +10,30 @@ button {
 }
 
 /* Display Element at a certain breakpoint */
-@media screen and (min-width: #{nth($screenSizes, 1)}) {
-  @each $sel in $screenSelectors {
-    .display-from-#{$sel} {
+$displayTypes: f flex, i inline, ib inline-block, g grid; // specific versions of display
+
+@each $sel in $screenSelectors {
+  .display-from-#{$sel} {
+    display: none;
+  }
+  // set display for all specific versions of display-from
+  @each $d, $prop in $displayTypes {
+    .#{$d}-display-from-#{$sel} {
       display: none;
     }
   }
 }
+
 @each $sel, $size in zip($screenSelectors, $screenSizes) {
   @media screen and (min-width: $size) {
     .display-from-#{$sel} {
       display: block;
+    }
+    // set display to specific versions of display-from
+    @each $d, $prop in $displayTypes {
+      .#{$d}-display-from-#{$sel} {
+        display: $prop;
+      }
     }
   }
 }
